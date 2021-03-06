@@ -10,12 +10,7 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <div id="app">
-  <template v-if="ok">
-    <p>OK!</p>
-    <p>です！</p>
-    <p>誰？</p>
-  </template>
-  <button @click="ok = !ok">ボタン</button>
+    <p v-for="(value, key, index) in objects">{{value}}-{{key}}-{{index}}</p>
   </div>
 
 
@@ -24,7 +19,12 @@
       el: '#app',
       data: {
         ok: false,
-        maybeOK: true
+        maybeOK: true,
+        objects: {
+          tp: 'アイコ',
+          sh: 'ちな',
+          sg: 'これ'
+        }
       }
     })
   </script>
