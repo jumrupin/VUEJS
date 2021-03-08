@@ -14,33 +14,29 @@
   </div>
   <div id="app2">
     <p>{{message}}</p>
+    <button @click="changeInstans">インスタンス1を変更しちゃうよ</button>
   </div>
 
 
   <script>
-    new Vue({
+    var vm1 = new Vue({
       el: '#app1',
       data: {
         message: 'message'
       }
       })
-    new Vue({
+    var vm2 = new Vue({
       el: '#app2',
       data: {
         message: 'message'
+      },
+      methods: {
+        changeInstans: function() {
+          vm1.message = '変わってるね'
+        }
       }
     })
   </script>
-
-  <style>
-    .red {
-      color: red;
-    }
-
-    .bg-blue {
-      background-color: blue;
-    }
-  </style>
 
 </body>
 </html>
