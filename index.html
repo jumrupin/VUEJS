@@ -14,6 +14,7 @@
     <p>{{myData}}</p>
   </div>
   <div id="app2"></div>
+  <div id="app3"></div>
 
 
   <script>
@@ -33,10 +34,19 @@
 
     new Vue({
       data: {
-        pop: 'pop'
+        name: 'チナピー'
       },
-      template: '<h1>これはh１です</h1>'
+      template: '<h1>これは{{name}}です</h1>'
     }).$mount('#app2')
+
+    new Vue({
+      data: {
+        name: 'タピ'
+      },
+      render: function(createElement) {
+        return createElement('h1', 'こんにちは、' + this.name);
+      }
+    }).$mount('#app3')
   </script>
 
 </body>
