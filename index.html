@@ -12,30 +12,17 @@
   <div id="app1">
     <p>{{message}}</p>
   </div>
-  <div id="app2">
-    <p>{{message}}</p>
-    <button @click="changeInstans">インスタンス1を変更しちゃうよ</button>
-  </div>
 
 
   <script>
+    var data = {
+      message: 'message'
+    }
     var vm1 = new Vue({
       el: '#app1',
-      data: {
-        message: 'message'
-      }
+      data: data
       })
-    var vm2 = new Vue({
-      el: '#app2',
-      data: {
-        message: 'message'
-      },
-      methods: {
-        changeInstans: function() {
-          vm1.message = '変わってるね'
-        }
-      }
-    })
+    console.log(data === vm1.$data);
   </script>
 
 </body>
