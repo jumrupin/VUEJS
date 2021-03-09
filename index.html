@@ -13,6 +13,7 @@
     <p>{{message}}</p>
     <p>{{myData}}</p>
   </div>
+  <div id="app2"></div>
 
 
   <script>
@@ -29,6 +30,13 @@
       }
       })
     vm1.$mount('#app1');
+
+    new Vue({
+      data: {
+        pop: 'pop'
+      },
+      template: '<h1>これはh１です</h1>'
+    }).$mount('#app2')
   </script>
 
 </body>
