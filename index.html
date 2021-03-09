@@ -21,7 +21,6 @@
       teco: 'teco'
     }
     var vm1 = new Vue({
-      el: '#app1',
       data: data,
       computed: {
         myData: function(){
@@ -29,7 +28,7 @@
         }
       }
       })
-    console.log(data === vm1.$data);
+    vm1.$mount('#app1');
   </script>
 
 </body>
