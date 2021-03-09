@@ -11,16 +11,23 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <div id="app1">
     <p>{{message}}</p>
+    <p>{{myData}}</p>
   </div>
 
 
   <script>
     var data = {
-      message: 'message'
+      message: 'message',
+      teco: 'teco'
     }
     var vm1 = new Vue({
       el: '#app1',
-      data: data
+      data: data,
+      computed: {
+        myData: function(){
+          return this.$data;
+        }
+      }
       })
     console.log(data === vm1.$data);
   </script>
